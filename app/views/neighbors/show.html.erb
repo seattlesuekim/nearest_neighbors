@@ -1,0 +1,7 @@
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<%= javascript_include_tag 'graph' %>
+<ul>
+    <% @neighbors.flatten.each do |sig| %>
+        <li><%= sig %></li>
+    <% end %>
+</ul>

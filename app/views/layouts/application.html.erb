@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrustPaths</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/"><img src="assets/spider.png"></a><h2><%= t(:title) %></h2>
+<div id="wrap">
+    <div id="main" class="container clear-top">
+        <%= yield %>
+    </div>
+</div>
+
+<footer class="footer"><%= form_tag('users')%>
+                    <%= label_tag(:email, t('email')) %>
+                    <%= text_field_tag(:email)%>
+                    <%= submit_tag(t('signup')) %>
+<div class="i18n">
+    <a href="/?locale=en"><img src="assets/en.png"></a><a href="/?locale=ru"><img src="assets/ru.ico"></a>
+</div>
+</footer>
+</body>
+</html>

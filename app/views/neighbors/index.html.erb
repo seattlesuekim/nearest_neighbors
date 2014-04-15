@@ -1,0 +1,16 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <%= form_tag('/neighbors') do %>
+        <%= label_tag(:keyid, t('keyid')) %>
+        <%= text_field_tag(:keyid, '', size: 16) %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= label_tag(:n, t('neighbors')) %>
+        <%= text_field_tag(:n, '', size: 3) %>
+        <%= submit_tag(t('search')) %>
+    </div>
+</div>
+<% end %>

@@ -35,6 +35,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bson (1.10.0)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -47,6 +48,7 @@ GEM
     d3-rails (3.4.4)
       railties (>= 3.1)
     debug_inspector (0.0.2)
+    durran-validatable (2.0.1)
     erubis (2.7.0)
     execjs (2.0.2)
     faraday (0.9.0)
@@ -54,6 +56,7 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    graph (2.7.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -65,11 +68,19 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    leshill-will_paginate (2.3.11)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (4.7.5)
+    mongo (1.10.0)
+      bson (~> 1.10.0)
+    mongoid (1.0.6)
+      activesupport (>= 2.2.2)
+      durran-validatable (>= 2.0.1)
+      leshill-will_paginate (>= 2.3.11)
+      mongo (>= 0.18.2)
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -111,7 +122,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    sks_dump_parser (0.2)
+    sks_dump_parser (0.3)
     sorcery (0.8.5)
       bcrypt-ruby (>= 3.0)
       oauth (~> 0.4.4)
@@ -145,18 +156,21 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
   d3-rails
   figaro
+  graph
   jbuilder (~> 1.2)
   jquery-rails
+  mongoid
   pony
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc
-  sks_dump_parser (~> 0.2)
+  sks_dump_parser (~> 0.3)
   sorcery
   sqlite3
   turbolinks

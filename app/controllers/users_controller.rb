@@ -12,7 +12,6 @@ class UsersController < ApplicationController
                 :subject => 'Email Updates',
                 :body => "Thank you for signing up for updates. I'll only email you again if it's important!",
                 :via  => :sendmail)
-      #TODO: make notice work, also display whether user already signed up.
       flash[:notice] = 'Signed up!'
     end
     redirect_to root_url

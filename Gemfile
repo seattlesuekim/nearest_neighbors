@@ -31,15 +31,17 @@ gem 'figaro'
 
 gem 'pony'
 
-gem 'wikipedia-client'
-
-gem 'sks_dump_parser', '~> 0.2'
+gem 'sks_dump_parser', '~> 0.3'
 
 gem 'sorcery'
 
 gem 'better_errors'
+
 gem "binding_of_caller"
+
 gem 'd3-rails'
+
+gem 'graph'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

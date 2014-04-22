@@ -31,7 +31,7 @@ gem 'figaro'
 
 gem 'pony'
 
-gem 'sks_dump_parser', '~> 0.3'
+gem 'sks_dump_parser', '~> 0.4'
 
 gem 'sorcery'
 

@@ -1,0 +1,39 @@
+<h3>About Web Neighbors</h3>
+<hr><hr>
+
+<h4>What are PGP and GPG?</h4>
+<p>PGP stands for Pretty Good Privacy. Check out <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy">this article</a>.
+GPG stands for <a href="http://en.wikipedia.org/wiki/GNU_Privacy_Guard">GNU Privacy Guard</a>. It allows you to generate your key,
+    sign keys, view your signature, and more.</p><hr>
+
+<h4>What is the Web of Trust?</h4>
+<p>The <a href="http://en.wikipedia.org/wiki/Web_of_trust">Web of Trust</a> is a decentralized model, with the advantage
+    that you don't need to trust any central authority to declare a key as being 'trusted.' There are more than 1.3 million
+    public keys in the Web of Trust.</p><hr>
+
+<h4>What is Web Neighbors?</h4>
+<p>Those with PGP keys and GPG installed can run <code>gpg --list-keys</code> to view the signatures on their own key, but cannot
+    view the signatures on others' keys. Web Neighbors provides a way to view your nth nearest neighbor in a way that is simple to use.</p><hr>
+
+<h4>What is a 'nearest neighbor?'</h4>
+<p>Your 1st 'nearest neighbors' are the group of people who have signed your public key. Your 2nd 'nearest neighbors' are the group of people who have
+signed the keys of your 1st 'nearest neighbors,' and so on. Simply put, your nth nearest neighbors are the people who are n degrees of separation
+from you in the Web of Trust.</p><hr>
+
+
+<h4>I don't have a key. How do I get in on this?</h4>
+<p>Read <a href="http://sue-white.herokuapp.com/blog15">this article</a> or ask a friend. It's easy!</p><hr>
+
+<h4>How else can I interact with the Web of Trust?</h4>
+Aside from Web Neighbors, there are application which offer different services involving the Web of Trust. Some examples
+    are:
+    <ul>
+        <li><a href="http://pgp.mit.edu">MIT's key server</a>, which gives you the output of <code>gpg --list-keys</code> for any user</li>
+        <li></li>
+    </ul><hr>
+
+<h4>Who is the target group for Web Neighbors?</h4>
+<p>A typical user of Web Neighbors would be the owner of any of the 1.3 million+ public keys. The user is curious to see who
+is in the user's immediate vicinity in the Web of Trust. The user wants an idea of how nested they are (how trusted they are), or
+wants to verify that they are n degrees of separation from a famous person (a person with their own Wikipedia page). The user may check every
+Monday for updates, because that's when niif's keyserver updates.</p>

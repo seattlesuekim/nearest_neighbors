@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TrustPaths</title>
+  <title>Web Neighbors</title>
+  <%= stylesheet_link_tag    "bootstrap" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -23,7 +24,8 @@
                     <%= text_field_tag(:email)%>
                     <%= submit_tag(t('signup')) %>
 <div class="i18n">
-    <a href="/?locale=en"><img src="assets/en.png"></a><a href="/?locale=ru"><img src="assets/ru.ico"></a>
+    <a href="/?locale=en"><img src="assets/en.png"></a><a href="/?locale=ru"><img src="assets/ru.ico"></a><br>
+    <a href="/about">About</a>
 </div>
 </footer>
 </body>

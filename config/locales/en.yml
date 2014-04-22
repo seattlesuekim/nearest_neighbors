@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: 'PGP Neighbors'
+  title: 'Web Neighbors'
   keyid: 'Enter your keyid'
   neighbors: "Nearest Neighbors #"
   email: 'Subscribe to mailing list'

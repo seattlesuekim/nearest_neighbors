@@ -1,12 +1,5 @@
 class NeighborsController < ApplicationController
-
-  def show
-    @dump_hash = Neighbor::DUMP_HASH
-    render :show
-  end
-
   def create
-    @dump_hash = Neighbor::DUMP_HASH
     @name = Neighbor.to_name(params[:keyid])
     cookies.permanent[:uuid] = params[:keyid] unless cookies[:uuid]
     @neighbors = Neighbor.nearest_neighbors(params[:keyid], params[:n])

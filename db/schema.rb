@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140423203215) do
     t.string "email", null: false
   end
 
+  add_index "uids", ["id"], name: "index_uids_on_id", unique: true
+
   create_table "users", force: true do |t|
     t.string "email"
   end

@@ -3,7 +3,7 @@ require 'net/http'
 
 class Neighbor
 
-  DUMP_HASH ||= YAML.load_file('lib/assets/dump_hash.yml')
+  DUMP_HASH ||= {}#YAML.load_file('lib/assets/dump_hash.yml')
 
   #recurse through dump_hash to find the n nearest neighbors
   def self.nearest_neighbors(keyid, n=1)

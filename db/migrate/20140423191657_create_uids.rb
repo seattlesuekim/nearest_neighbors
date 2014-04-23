@@ -5,5 +5,6 @@ class CreateUids < ActiveRecord::Migration
 	t.string :name, null: false
 	t.string :email, null: false
     end
+    add_index :uids, :id, unique: true
   end
 end

@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20140423203215) do
 
-  create_table "sig", id: false, force: true do |t|
+  create_table "sigs", id: false, force: true do |t|
     t.string "signer", null: false
     t.string "signed", null: false
   end
 
-  create_table "uid", id: false, force: true do |t|
-    t.string "id"
+  create_table "uids", id: false, force: true do |t|
+    t.string "id",    null: false
     t.string "name",  null: false
     t.string "email", null: false
   end

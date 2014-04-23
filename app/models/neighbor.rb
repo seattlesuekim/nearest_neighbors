@@ -9,7 +9,7 @@ class Neighbor
   def self.nearest_neighbors(keyid, n=1)
     keyid = keyid.upcase
     n = n.to_i
-    return unless DUMP_HASH[keyid]
+    return [] unless DUMP_HASH[keyid]
     #base case
     if n == 1
       DUMP_HASH[keyid][:sigs]

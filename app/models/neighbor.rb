@@ -9,21 +9,16 @@ class Neighbor
   def self.nearest_neighbors(keyid, n=1)
     keyid = keyid.upcase
     n = n.to_i
-    neighbors = []
-    if DUMP_HASH[keyid]
-      #base case
-      if n == 0
-        return neighbors
-        #base case
-      elsif n == 1
-        neighbors << DUMP_HASH[keyid][:sigs]
-      else
-        for sig in DUMP_HASH[keyid][:sigs]
-          self.nearest_neighbors(sig, (n-1))
-        end
-      end
+    return unless DUMP_HASH[keyid]
+    #base case
+    if n == 1
+      DUMP_HASH[keyid][:sigs]
     else
-      nil
+      neighbors = []
+      for sig in DUMP_HASH[keyid][:sigs]
+        neighbors.concat(self.nearest_neighbors(sig, (n-1)))
+      end
+      neighbors
     end
   end
 

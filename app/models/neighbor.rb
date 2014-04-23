@@ -3,19 +3,18 @@ require 'net/http'
 
 class Neighbor
 
-  DUMP_HASH ||= {}#YAML.load_file('lib/assets/dump_hash.yml')
-
   #recurse through dump_hash to find the n nearest neighbors
   def self.nearest_neighbors(keyid, n=1)
     keyid = keyid.upcase
     n = n.to_i
-    return [] unless DUMP_HASH[keyid]
+    uid = Uid.find_by(id: keyid)
+    return [] unless uid
     #base case
     if n == 1
-      DUMP_HASH[keyid][:sigs]
+      uid.signed_by
     else
       neighbors = []
-      for sig in DUMP_HASH[keyid][:sigs]
+      for sig in uid.signed_by
         neighbors.concat(self.nearest_neighbors(sig, (n-1)))
       end
       neighbors
@@ -23,8 +22,9 @@ class Neighbor
   end
 
   def self.to_name(keyid)
-    if DUMP_HASH[keyid] && DUMP_HASH[keyid][:user].split(' <')[0]
-      DUMP_HASH[keyid][:user].split(' <')[0].tr!(' ', '_')
+    uid = Uid.find_by(id: keyid)
+    if uid && uid.name
+      uid.name
     else
       "unknown"
     end

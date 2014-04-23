@@ -1,11 +1,4 @@
-#include 'NeighborHelper'
 class NeighborsController < ApplicationController
-
-  #def index
-  #  if cookies[:uuid]
-  #
-  #  end
-  #end
 
   def show
     @dump_hash = Neighbor::DUMP_HASH

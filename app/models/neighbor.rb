@@ -6,7 +6,7 @@ class Neighbor
   DUMP_HASH ||= YAML.load_file('lib/assets/dump_hash.yml')
 
   #recurse through dump_hash to find the n nearest neighbors
-  def self.nearest_neighbors(keyid, n)
+  def self.nearest_neighbors(keyid, n=1)
     keyid = keyid.upcase
     n = n.to_i
     neighbors = []
@@ -17,13 +17,12 @@ class Neighbor
     elsif n == 1
       if DUMP_HASH[keyid]
         neighbors << DUMP_HASH[keyid][:sigs]
-      else
-        raise('not in dir')
       end
     else
-      for sig in DUMP_HASH[keyid][:sigs]
-        n -= 1
-        self.nearest_neighbors(sig, (n))
+      if DUMP_HASH[keyid]
+        for sig in DUMP_HASH[keyid][:sigs]
+          self.nearest_neighbors(sig, (n-1))
+        end
       end
     end
   end

@@ -1,21 +1,27 @@
 <div class="row">
     <% if @neighbors %>
         <% @neighbors.each do |sig| %>
+            <table>
+                <tr>
+                    <th>sigs</th>
+                    <th>Keyid</th>
+                    <th>Name</th>
+                </tr>
             <% sig.each do |keyid| %>
                 <% name = Neighbor.to_name(keyid) %>
-                <table>
                     <tr>
-                        <td><button type="button" class="btn btn-info btn-xs">View Signatures</button></td>
+                        <%= form_tag '/neighbors' %>
+                        <%= hidden_field_tag 'keyid', keyid %>
+                        <td><button type="button" type="submit" class="btn btn-info btn-xs">View Signatures</button></td>
                         <td><%= keyid %></td>
                         <td><%= name %></td>
                     </tr>
-                </table>
-
             <!--if @famous_people.include?(name) %>-->
                 <!--<div class="col-md-4"><a href="http://en.wikipedia.org/wiki/#{Neighbor.to_name(sig)"></a></div>-->
             <!-- #else %>-->
             <!-- end -->
             <% end %>
         <% end %>
+        </table>
     <% end %>
 </div>

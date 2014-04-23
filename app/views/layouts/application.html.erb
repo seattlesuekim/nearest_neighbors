@@ -3,12 +3,12 @@
 <head>
   <title>Web Neighbors</title>
   <%= stylesheet_link_tag    "bootstrap" %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/"><img src="assets/spider.png"></a><h2><%= t(:title) %></h2>
+<a href="/"><img src="http://ddbjb4uml6c1t.cloudfront.net/spider.png"></a><h2><%= t(:title) %></h2>
 <div id="wrap">
     <div id="main" class="container clear-top">
         <%= yield %>

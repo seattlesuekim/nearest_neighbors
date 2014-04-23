@@ -32,3 +32,12 @@ html, body {
     clear:both;
     padding-top:20px;
 }
+
+table {
+    text-align: left;
+}
+
+
+td {
+    padding: 10px;
+}

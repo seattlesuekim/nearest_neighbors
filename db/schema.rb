@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408214538) do
+ActiveRecord::Schema.define(version: 20140423203215) do
+
+  create_table "sig", id: false, force: true do |t|
+    t.string "signer", null: false
+    t.string "signed", null: false
+  end
+
+  create_table "uid", id: false, force: true do |t|
+    t.string "id"
+    t.string "name",  null: false
+    t.string "email", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string "email"
+  end
+
+  create_table "vips", id: false, force: true do |t|
+    t.string "id", null: false
   end
 
 end

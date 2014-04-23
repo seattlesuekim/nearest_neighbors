@@ -1,27 +1,30 @@
 <div class="row">
     <% if @neighbors %>
-        <% @neighbors.each do |sig| %>
-            <table>
+        <table>
+            <tr>
+                <th>sigs</th>
+                <th>Keyid</th>
+                <th>Name</th>
+            </tr>
+            <% @neighbors.each do |sig| %>
+                <% name = Neighbor.to_name(sig) %>
                 <tr>
-                    <th>sigs</th>
-                    <th>Keyid</th>
-                    <th>Name</th>
-                </tr>
-            <% sig.each do |keyid| %>
-                <% name = Neighbor.to_name(keyid) %>
-                    <tr>
-                        <%= form_tag '/neighbors' %>
-                        <%= hidden_field_tag 'keyid', keyid %>
+                    <%= form_tag('/neighbors') do %>
+                        <%= hidden_field_tag 'keyid', sig %>
                         <td><button type="button" type="submit" class="btn btn-info btn-xs">View Signatures</button></td>
-                        <td><%= keyid %></td>
-                        <td><%= name %></td>
-                    </tr>
-            <!--if @famous_people.include?(name) %>-->
+                    <% end %>
+                    <td><%= sig %></td>
+                    <td><%= name %></td>
+                </tr>
+
+
+                <!--if @famous_people.include?(name) %>-->
                 <!--<div class="col-md-4"><a href="http://en.wikipedia.org/wiki/#{Neighbor.to_name(sig)"></a></div>-->
-            <!-- #else %>-->
-            <!-- end -->
+                <!-- #else %>-->
+                <!-- end -->
             <% end %>
-        <% end %>
         </table>
+    <% else %>
+        <p>No signatures found on public key <%= "#{params[:keyid]}" %></p>
     <% end %>
 </div>

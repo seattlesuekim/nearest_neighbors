@@ -10,20 +10,20 @@ class Neighbor
     keyid = keyid.upcase
     n = n.to_i
     neighbors = []
-    #base case
-    if n == 0
-      return neighbors
-    #base case
-    elsif n == 1
-      if DUMP_HASH[keyid]
+    if DUMP_HASH[keyid]
+      #base case
+      if n == 0
+        return neighbors
+        #base case
+      elsif n == 1
         neighbors << DUMP_HASH[keyid][:sigs]
-      end
-    else
-      if DUMP_HASH[keyid]
+      else
         for sig in DUMP_HASH[keyid][:sigs]
           self.nearest_neighbors(sig, (n-1))
         end
       end
+    else
+      nil
     end
   end
 

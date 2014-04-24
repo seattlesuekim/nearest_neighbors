@@ -141,6 +141,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   sks_dump_parser (~> 0.4)
+  sprockets-rails
   sqlite3
   therubyracer
   turbolinks

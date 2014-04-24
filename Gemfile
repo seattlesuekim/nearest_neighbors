@@ -6,6 +6,8 @@ gem 'rails', '4.0.2'
 gem 'sqlite3', group: [:development, :test]
 gem 'pg'
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

@@ -55,9 +55,10 @@ class Neighbor
     end
   end
 
-
+  def self.vip_url(keyid)
+    vip = Vip.find(keyid)
+    if vip
+      vip.url
+    end
+  end
 end
-
-
-
-

@@ -16,7 +16,12 @@
                         <% end %>
                     </td>
                     <td><%= sig %></td>
-                    <td><%= name %></td>
+		    <% wiki_url = Neighbor.vip_url(sig) %>
+		    <% if wiki_url %>
+                        <td><a href="<%= wiki_url %>"><%= name %></a></td>
+                    <% else %>
+		        <td><%= name %></td>
+		    <% end %>
                 </tr>
 
 

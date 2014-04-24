@@ -9,10 +9,12 @@
             <% @neighbors.each do |sig| %>
                 <% name = Neighbor.to_name(sig) %>
                 <tr>
-                    <%= form_tag('/neighbors') do %>
-                        <%= hidden_field_tag 'keyid', sig %>
-                        <td><button type="button" type="submit" class="btn btn-info btn-xs">View Signatures</button></td>
-                    <% end %>
+		    <td>
+		        <%= form_tag('/neighbors') do %>
+                            <%= hidden_field_tag 'keyid', sig %>
+                            <input type="submit" class="btn btn-info btn-xs" value="View Signatures"/>
+                        <% end %>
+                    </td>
                     <td><%= sig %></td>
                     <td><%= name %></td>
                 </tr>

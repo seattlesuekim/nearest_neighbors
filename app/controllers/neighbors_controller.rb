@@ -2,7 +2,7 @@ class NeighborsController < ApplicationController
   def create
     @name = Neighbor.to_name(params[:keyid])
     cookies.permanent[:uuid] = params[:keyid] unless cookies[:uuid]
-    @neighbors = Neighbor.nearest_neighbors(params[:keyid], params[:n])
+    @neighbors = Neighbor.nearest_neighbors(params[:keyid], params[:n] || 1)
     render :show
   end
 
